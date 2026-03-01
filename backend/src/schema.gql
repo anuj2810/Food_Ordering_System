@@ -1,0 +1,141 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthResponse {
+  accessToken: String!
+  user: BaseUserResponse!
+}
+
+type BaseUserResponse {
+  countryId: Float!
+  email: String!
+  firstName: String!
+  id: Float!
+  lastName: String!
+  roleId: Float!
+}
+
+input CreateMenuItemInput {
+  description: String
+  name: String!
+  price: Float!
+  restaurantId: Int!
+}
+
+input CreateOrderInput {
+  items: [OrderItemInput!]!
+  restaurantId: Int!
+}
+
+input CreatePaymentMethodInput {
+  methodName: String!
+  provider: String!
+  token: String
+}
+
+input CreateRestaurantInput {
+  address: String!
+  countryId: Int!
+  description: String
+  name: String!
+  phoneNumber: String
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+}
+
+type MenuItemResponse {
+  description: String
+  id: Int!
+  isAvailable: Boolean!
+  name: String!
+  price: Float!
+  restaurantId: Int!
+}
+
+type Mutation {
+  addMenuItem(createMenuItemInput: CreateMenuItemInput!): MenuItemResponse!
+  addPaymentMethod(createPaymentMethodInput: CreatePaymentMethodInput!): PaymentMethodResponse!
+  cancelOrder(orderId: Int!): OrderResponse!
+  createOrder(createOrderInput: CreateOrderInput!): OrderResponse!
+  createRestaurant(createRestaurantInput: CreateRestaurantInput!): RestaurantResponse!
+  deletePaymentMethod(id: Int!): Boolean!
+  login(loginUserInput: LoginUserInput!): AuthResponse!
+  register(registerUserInput: RegisterUserInput!): AuthResponse!
+  updateOrderStatus(orderId: Int!, status: String!): OrderResponse!
+}
+
+input OrderItemInput {
+  menuItemId: Int!
+  quantity: Int!
+}
+
+type OrderItemResponse {
+  id: Int!
+  menuItemId: Int!
+  quantity: Int!
+  subtotal: Float!
+  unitPrice: Float!
+}
+
+type OrderResponse {
+  id: Int!
+  items: [OrderItemResponse!]!
+  orderStatus: String!
+  restaurantId: Int!
+  totalAmount: Float!
+  userId: Int!
+}
+
+type PaymentMethodResponse {
+  id: Int!
+  isActive: Boolean!
+  methodName: String!
+  provider: String!
+  token: String
+  userId: Int!
+}
+
+type Query {
+  allOrders: [OrderResponse!]!
+  assignedOrders: [OrderResponse!]!
+  myOrders: [OrderResponse!]!
+  myPaymentMethods: [PaymentMethodResponse!]!
+  restaurants: [RestaurantResponse!]!
+  users: [UserResponse!]!
+}
+
+input RegisterUserInput {
+  countryId: Int!
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
+  phoneNumber: String
+  roleId: Int!
+}
+
+type RestaurantResponse {
+  address: String!
+  countryId: Int!
+  description: String
+  id: Int!
+  isActive: Boolean!
+  menuItems: [MenuItemResponse!]
+  name: String!
+  phoneNumber: String
+}
+
+type UserResponse {
+  countryId: Int!
+  email: String!
+  firstName: String!
+  id: Int!
+  isActive: Boolean!
+  lastName: String!
+  phoneNumber: String
+  roleId: Int!
+}
