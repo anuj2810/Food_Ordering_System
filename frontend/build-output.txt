@@ -1,0 +1,33 @@
+
+> frontend@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.2s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/12) ...
+  Generating static pages using 7 workers (3/12) 
+  Generating static pages using 7 workers (6/12) 
+  Generating static pages using 7 workers (9/12) 
+Γ£ô Generating static pages using 7 workers (12/12) in 443.4ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /dashboard
+Γö£ Γùï /dashboard/admin
+Γö£ Γùï /dashboard/orders
+Γö£ Γùï /dashboard/orders/checkout
+Γö£ Γùï /dashboard/payments
+Γö£ Γùï /dashboard/restaurants
+Γö£ Γùï /login
+Γöö Γùï /register
+
+
+Γùï  (Static)  prerendered as static content
+

@@ -1,0 +1,165 @@
+
+========================================================
+  FOOD ORDERING SYSTEM - FULL END-TO-END TEST SUITE
+========================================================
+  Timestamp: 5946
+  Backend:   http://localhost:3000/graphql
+  Frontend:  http://localhost:3001
+========================================================
+
+--- SECTION 1: BACKEND API HEALTH ---
+
+[1] GraphQL endpoint is accessible...
+  PASS
+
+--- SECTION 2: USER REGISTRATION ---
+
+[2] Register Admin user...
+  PASS
+  Admin ID: 18
+
+[3] Register Member user...
+  PASS
+  Member ID: 19
+
+[4] Duplicate email rejected...
+  PASS: Correctly returned error
+
+--- SECTION 3: USER LOGIN ---
+
+[5] Login Admin...
+  PASS
+
+[6] Login Member...
+  PASS
+
+[7] Wrong password rejected...
+  PASS: Correctly returned error
+
+
+[8] Non-existent email rejected...
+  PASS: Correctly returned error
+
+--- SECTION 4: AUTHORIZATION ---
+
+[9] Unauthenticated access denied...
+  PASS: Correctly returned error
+
+[10] Admin creates restaurant...
+  PASS
+  Restaurant ID: 6
+
+[11] Member cannot create restaurant...
+  PASS: Correctly returned error
+
+--- SECTION 5: MENU ITEMS ---
+
+[12] Add Burger (9.99)...
+  PASS
+
+[13] Add Fries (3.99)...
+  PASS
+
+[14] Add Shake (5.49)...
+  PASS
+
+--- SECTION 6: RESTAURANT BROWSING ---
+
+[15] Fetch restaurants with menu items...
+  PASS
+
+[16] Verify restaurant has 3 items...
+  PASS
+  Restaurant 6 has 3 items
+
+--- SECTION 7: ORDER FLOW ---
+
+[17] Member places order (2xBurger + 1xFries)...
+  PASS
+  Order #7 Total: 23.97
+
+[18] Member views own orders...
+  PASS
+
+[19] Admin views ALL orders...
+  PASS
+
+[20] Admin updates order to PAID...
+  PASS
+
+[21] Member creates 2nd order (cancel test)...
+  PASS
+
+[22] Member cancels order...
+  PASS
+
+--- SECTION 8: PAYMENT METHODS ---
+
+[23] Add Visa payment...
+  PASS
+
+[24] Add PayPal payment...
+  PASS
+
+[25] View payment methods...
+  PASS
+
+[26] Delete payment method...
+  PASS
+
+--- SECTION 9: ADMIN USER MGMT ---
+
+[27] Admin fetches all users...
+  PASS
+
+[28] Member cannot fetch users...
+  PASS: Correctly returned error
+
+--- SECTION 10: FRONTEND PAGES ---
+
+[29] Landing page (/)...
+  PASS: HTTP 200
+
+[30] Login page (/login)...
+  PASS: HTTP 200
+
+[31] Register page (/register)...
+  PASS: HTTP 200
+
+[32] Dashboard (/dashboard)...
+  PASS: HTTP 200
+
+[33] Restaurants...
+  PASS: HTTP 200
+
+[34] Orders...
+  PASS: HTTP 200
+
+[35] Checkout...
+  PASS: HTTP 200
+
+[36] Payments...
+  PASS: HTTP 200
+
+[37] Admin...
+  PASS: HTTP 200
+
+========================================================
+  TEST RESULTS
+========================================================
+  Total:  37
+  Passed: 37
+  Failed: 0
+========================================================
+
+  ALL TESTS PASSED!
+
+errors                  
+------                  
+{@{message=Invalid cr...
+{@{message=Invalid cr...
+{@{message=Unauthoriz...
+{@{message=Insufficie...
+{@{message=Insufficie...
+
+

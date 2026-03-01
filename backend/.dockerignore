@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.env
+.env.local
+*.md
+test-api.ps1
+test-results.txt
+build-output.txt
+out.txt
+coverage
